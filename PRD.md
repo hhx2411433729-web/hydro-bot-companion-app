@@ -117,3 +117,16 @@
 [Bottom Nav]
    |-- Click Encyclopedia --> [Plant Library ("/encyclopedia")]
    |-- Click Profile      --> [User Settings ("/profile")]
+   ---
+
+## 6. Dashboard Enhancement Requirements (Interactive Update)
+
+### Feature 1: Dynamic Butler Perspective Switcher
+* **UI Change:** Inside the Butler Header card, add a small, elegant dropdown menu or horizontal tabs showing: `[All Devices, Lily, Living Room Giant, Dining Glow]`.
+* **Logic Rules:**
+  - **All Devices (Default):** The butler scan-priority goes to any "LOW" water level alert across the ecosystem.
+  - **Specific Device Selected (e.g., Lily):** The butler persona completely focus-shifts to that specific plant. The avatar illustration/emoji and the dialogue text must recalculate *only* based on Lily's metrics (e.g., if Lily is healthy, the butler smiles and says: *"Lily is enjoying the 450 Lux light today, Master! Growth is on track!"*), even if other devices are running out of water.
+
+### Feature 2: Card Click Navigation (React Router Link)
+* **UI/UX Change:** Wrap the entire Device Card (or add a "View Details" button) with a router click handler.
+* **Logic Rules:** Clicking a card must trigger `Maps(`/device/${device.id}`)`, passing the respective device data or ID into the Device Details page, rendering the Dashboard interactive.
